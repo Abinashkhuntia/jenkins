@@ -1,11 +1,12 @@
 #!/usr/bin/env groovy
 
+@Library('shared-library') _
+
 def gv
 
 pipeline {
     agent any
     tools {
-        
         maven 'maven'
     }
     parameters {
@@ -35,7 +36,7 @@ pipeline {
             }
             steps {
                 script {
-                    // gv.testApp()
+                    gv.testApp()
                 }
             }
         }
